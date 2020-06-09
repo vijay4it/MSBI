@@ -3,15 +3,36 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1145
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "MSBI_Training", "MSBI_Training\MSBI_Training.dtproj", "{2EB22794-166E-48DF-A234-2661893F1EF9}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS", "MSBI_Training\SSIS.dtproj", "{2EB22794-166E-48DF-A234-2661893F1EF9}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SSRS", "SSRS\SSRS.rptproj", "{20CC4CDF-4780-4E3E-B833-70640F19875A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
 		Development|Default = Development|Default
+		Release|Default = Release|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EB22794-166E-48DF-A234-2661893F1EF9}.Debug|Default.ActiveCfg = Development
+		{2EB22794-166E-48DF-A234-2661893F1EF9}.Debug|Default.Build.0 = Development
+		{2EB22794-166E-48DF-A234-2661893F1EF9}.DebugLocal|Default.ActiveCfg = Development
+		{2EB22794-166E-48DF-A234-2661893F1EF9}.DebugLocal|Default.Build.0 = Development
 		{2EB22794-166E-48DF-A234-2661893F1EF9}.Development|Default.ActiveCfg = Development
 		{2EB22794-166E-48DF-A234-2661893F1EF9}.Development|Default.Build.0 = Development
+		{2EB22794-166E-48DF-A234-2661893F1EF9}.Release|Default.ActiveCfg = Development
+		{2EB22794-166E-48DF-A234-2661893F1EF9}.Release|Default.Build.0 = Development
+		{20CC4CDF-4780-4E3E-B833-70640F19875A}.Debug|Default.ActiveCfg = Debug
+		{20CC4CDF-4780-4E3E-B833-70640F19875A}.Debug|Default.Build.0 = Debug
+		{20CC4CDF-4780-4E3E-B833-70640F19875A}.Debug|Default.Deploy.0 = Debug
+		{20CC4CDF-4780-4E3E-B833-70640F19875A}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{20CC4CDF-4780-4E3E-B833-70640F19875A}.DebugLocal|Default.Build.0 = DebugLocal
+		{20CC4CDF-4780-4E3E-B833-70640F19875A}.Development|Default.ActiveCfg = DebugLocal
+		{20CC4CDF-4780-4E3E-B833-70640F19875A}.Development|Default.Build.0 = DebugLocal
+		{20CC4CDF-4780-4E3E-B833-70640F19875A}.Release|Default.ActiveCfg = Release
+		{20CC4CDF-4780-4E3E-B833-70640F19875A}.Release|Default.Build.0 = Release
+		{20CC4CDF-4780-4E3E-B833-70640F19875A}.Release|Default.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

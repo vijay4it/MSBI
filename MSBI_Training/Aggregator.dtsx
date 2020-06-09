@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Aggregator"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{B79EBA26-277F-4BA0-91A7-808104EEF25E}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{0BA5B3E0-EACB-4747-BF59-DDA2881E79E8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -106,6 +106,16 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-A9KPPM3U\MSSQLSERVER01.Training]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{40072FDA-3C80-41EF-9C6D-635B4246AFC0}"
+      DTS:ObjectName="LAPTOP-A9KPPM3U\MSSQLSERVER01.Training">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LAPTOP-A9KPPM3U\MSSQLSERVER01;Initial Catalog=Training;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -634,7 +644,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[sum_of_allocated]</property>
+                  name="OpenRowset">[OLE DB Destination_git]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -677,8 +687,8 @@
               <connections>
                 <connection
                   refId="Package\Aggregator\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E93FB14F-A9CF-4375-9663-05332BF6A2E3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-A9KPPM3U_MSSQLSERVER01.Training]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-A9KPPM3U\MSSQLSERVER01.Training]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-A9KPPM3U\MSSQLSERVER01.Training]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -696,14 +706,6 @@
                       cachedName="Sum_allocated_amount"
                       externalMetadataColumnId="Package\Aggregator\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sum_allocated_amount]"
                       lineageId="Package\Aggregator\Aggregate.Outputs[Aggregate Output 1].Columns[Sum_allocated_amount]" />
-                    <inputColumn
-                      refId="Package\Aggregator\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[agg_Business_code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="agg_Business_code"
-                      externalMetadataColumnId="Package\Aggregator\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DC)Business_code]"
-                      lineageId="Package\Aggregator\Aggregate.Outputs[Aggregate Output 1].Columns[agg_Business_code]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -712,11 +714,11 @@
                       dataType="i8"
                       name="Sum_allocated_amount" />
                     <externalMetadataColumn
-                      refId="Package\Aggregator\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DC)Business_code]"
+                      refId="Package\Aggregator\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[agg_Business_code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="DC)Business_code" />
+                      name="agg_Business_code" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -792,51 +794,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Aggregator\OLE DB Destination"
-          TopLeft="218.000003712518,306.494121945523" />
-        <NodeLayout
           Size="150.4,41.6"
           Id="Package\Aggregator\Flat File Source"
           TopLeft="217.142860840778,8.56470600246971" />
         <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Aggregator\OLE DB Destination"
+          TopLeft="218.000003712518,306.494121945523" />
+        <NodeLayout
           Size="155.2,41.6"
           Id="Package\Aggregator\Data Conversion"
           TopLeft="205.714289217579,88.0941188825456" />
-        <EdgeLayout
-          Id="Package\Aggregator.Paths[Flat File Source Output]"
-          TopLeft="292.342860840778,50.1647060024697">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.0285716231989,37.9294128800758"
-              Start="0,0"
-              End="-9.0285716231989,30.4294128800758">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.9647064400379" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.9647064400379"
-                    Point2="0,18.9647064400379"
-                    Point3="-4,18.9647064400379" />
-                  <mssgle:LineSegment
-                    End="-5.0285716231989,18.9647064400379" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.0285716231989,18.9647064400379"
-                    Point2="-9.0285716231989,18.9647064400379"
-                    Point3="-9.0285716231989,22.9647064400379" />
-                  <mssgle:LineSegment
-                    End="-9.0285716231989,30.4294128800758" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="126.4,41.6"
           Id="Package\Aggregator\Aggregate"
@@ -889,6 +857,40 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,77.0764723578126" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggregator.Paths[Flat File Source Output]"
+          TopLeft="292.342860840778,50.1647060024697">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.0285716231989,37.9294128800758"
+              Start="0,0"
+              End="-9.0285716231989,30.4294128800758">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9647064400379" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9647064400379"
+                    Point2="0,18.9647064400379"
+                    Point3="-4,18.9647064400379" />
+                  <mssgle:LineSegment
+                    End="-5.0285716231989,18.9647064400379" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.0285716231989,18.9647064400379"
+                    Point2="-9.0285716231989,18.9647064400379"
+                    Point3="-9.0285716231989,22.9647064400379" />
+                  <mssgle:LineSegment
+                    End="-9.0285716231989,30.4294128800758" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
-    <Name>MSBI_Training</Name>
-    <LastWriteTime>2020-06-06T01:39:25.0827799Z</LastWriteTime>
+    <Name>SSIS</Name>
+    <LastWriteTime>2020-06-09T00:17:04.151255Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
