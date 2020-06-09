@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="merge_join"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{7760EA31-160D-41C9-8220-F52414347DD9}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{6EEDD4A7-C7D5-4B8F-BF1E-BCD29F622AF2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -234,6 +234,16 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-A9KPPM3U\MSSQLSERVER01.Training]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3353A88F-B09C-4104-90EB-4F1462DEEE41}"
+      DTS:ObjectName="LAPTOP-A9KPPM3U\MSSQLSERVER01.Training">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LAPTOP-A9KPPM3U\MSSQLSERVER01;Initial Catalog=Training;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -776,7 +786,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[employee]</property>
+                  name="OpenRowset">[OLE DB Destination_test]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -798,7 +808,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -819,8 +829,8 @@
               <connections>
                 <connection
                   refId="Package\merge_join\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E93FB14F-A9CF-4375-9663-05332BF6A2E3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-A9KPPM3U_MSSQLSERVER01.Training]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-A9KPPM3U\MSSQLSERVER01.Training]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-A9KPPM3U\MSSQLSERVER01.Training]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -839,7 +849,7 @@
                       cachedLength="50"
                       cachedName="Column 0"
                       cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[empid]"
+                      externalMetadataColumnId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Column 0]"
                       lineageId="Package\merge_join\Merge Join.Outputs[Merge Join Output].Columns[Column 0]" />
                     <inputColumn
                       refId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 1]"
@@ -847,7 +857,7 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Column 1"
-                      externalMetadataColumnId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ename]"
+                      externalMetadataColumnId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Column 1]"
                       lineageId="Package\merge_join\Merge Join.Outputs[Merge Join Output].Columns[Column 1]" />
                     <inputColumn
                       refId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 2]"
@@ -855,7 +865,7 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Column 2"
-                      externalMetadataColumnId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_loc]"
+                      externalMetadataColumnId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Column 2]"
                       lineageId="Package\merge_join\Merge Join.Outputs[Merge Join Output].Columns[Column 2]" />
                     <inputColumn
                       refId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 3]"
@@ -863,33 +873,35 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Column 3"
-                      externalMetadataColumnId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dept_id]"
+                      externalMetadataColumnId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Column 3]"
                       lineageId="Package\merge_join\Merge Join.Outputs[Merge Join Output].Columns[Column 3]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[empid]"
-                      dataType="i4"
-                      name="empid" />
-                    <externalMetadataColumn
-                      refId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ename]"
+                      refId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Column 0]"
                       codePage="1252"
                       dataType="str"
-                      length="200"
-                      name="ename" />
+                      length="50"
+                      name="Column 0" />
                     <externalMetadataColumn
-                      refId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_loc]"
+                      refId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Column 1]"
                       codePage="1252"
                       dataType="str"
-                      length="200"
-                      name="emp_loc" />
+                      length="50"
+                      name="Column 1" />
                     <externalMetadataColumn
-                      refId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dept_id]"
+                      refId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Column 2]"
                       codePage="1252"
                       dataType="str"
-                      length="200"
-                      name="dept_id" />
+                      length="50"
+                      name="Column 2" />
+                    <externalMetadataColumn
+                      refId="Package\merge_join\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Column 3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 3" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1325,6 +1337,10 @@
           Id="Package\merge_join\Flat File Source 1"
           TopLeft="215.428575097298,14.6823531470909" />
         <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\merge_join\OLE DB Destination"
+          TopLeft="283.428576255331,289.176473488197" />
+        <NodeLayout
           Size="106.4,41.6"
           Id="Package\merge_join\Sort 1"
           TopLeft="267.428575982853,104.000001458561" />
@@ -1332,6 +1348,100 @@
           Size="150.4,41.6"
           Id="Package\merge_join\Flat File Source"
           TopLeft="24.5714289898775,23.8588238640228" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\merge_join\Merge Join"
+          TopLeft="230.857146788617,216.282354897364" />
+        <EdgeLayout
+          Id="Package\merge_join.Paths[Sort Output1]"
+          TopLeft="318.276194719068,145.600001458561">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70.6823534388028"
+              Start="0,0"
+              End="0,63.1823534388028">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.1823534388028" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\merge_join.Paths[Sort Output]"
+          TopLeft="174.514287855187,141.929413171788">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="121.14285893343,74.3529417255758"
+              Start="0,0"
+              End="121.14285893343,66.8529417255758">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.1764708627879" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.1764708627879"
+                    Point2="0,37.1764708627879"
+                    Point3="4,37.1764708627879" />
+                  <mssgle:LineSegment
+                    End="117.14285893343,37.1764708627879" />
+                  <mssgle:CubicBezierSegment
+                    Point1="117.14285893343,37.1764708627879"
+                    Point2="121.14285893343,37.1764708627879"
+                    Point3="121.14285893343,41.1764708627879" />
+                  <mssgle:LineSegment
+                    End="121.14285893343,66.8529417255758" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\merge_join.Paths[Merge Join Output]"
+          TopLeft="295.657146788617,257.882354897364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72.9714294667147,31.2941185908334"
+              Start="0,0"
+              End="72.9714294667147,23.7941185908334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.6470592954167" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.6470592954167"
+                    Point2="0,15.6470592954167"
+                    Point3="4,15.6470592954167" />
+                  <mssgle:LineSegment
+                    End="68.9714294667147,15.6470592954167" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.9714294667147,15.6470592954167"
+                    Point2="72.9714294667147,15.6470592954167"
+                    Point3="72.9714294667147,19.6470592954167" />
+                  <mssgle:LineSegment
+                    End="72.9714294667147,23.7941185908334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\merge_join.Paths[Flat File Source Output1]"
           TopLeft="295.028575097298,56.2823531470909">
@@ -1392,104 +1502,6 @@
                     Point3="74.7428588653098,21.4352946538826" />
                   <mssgle:LineSegment
                     End="74.7428588653098,27.3705893077653" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\merge_join\Merge Join"
-          TopLeft="230.857146788617,216.282354897364" />
-        <EdgeLayout
-          Id="Package\merge_join.Paths[Sort Output]"
-          TopLeft="174.514287855187,141.929413171788">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="121.14285893343,74.3529417255758"
-              Start="0,0"
-              End="121.14285893343,66.8529417255758">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.1764708627879" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.1764708627879"
-                    Point2="0,37.1764708627879"
-                    Point3="4,37.1764708627879" />
-                  <mssgle:LineSegment
-                    End="117.14285893343,37.1764708627879" />
-                  <mssgle:CubicBezierSegment
-                    Point1="117.14285893343,37.1764708627879"
-                    Point2="121.14285893343,37.1764708627879"
-                    Point3="121.14285893343,41.1764708627879" />
-                  <mssgle:LineSegment
-                    End="121.14285893343,66.8529417255758" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\merge_join.Paths[Sort Output1]"
-          TopLeft="318.276194719068,145.600001458561">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70.6823534388028"
-              Start="0,0"
-              End="0,63.1823534388028">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.1823534388028" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\merge_join\OLE DB Destination"
-          TopLeft="283.428576255331,289.176473488197" />
-        <EdgeLayout
-          Id="Package\merge_join.Paths[Merge Join Output]"
-          TopLeft="295.657146788617,257.882354897364">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="72.9714294667147,31.2941185908334"
-              Start="0,0"
-              End="72.9714294667147,23.7941185908334">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.6470592954167" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.6470592954167"
-                    Point2="0,15.6470592954167"
-                    Point3="4,15.6470592954167" />
-                  <mssgle:LineSegment
-                    End="68.9714294667147,15.6470592954167" />
-                  <mssgle:CubicBezierSegment
-                    Point1="68.9714294667147,15.6470592954167"
-                    Point2="72.9714294667147,15.6470592954167"
-                    Point3="72.9714294667147,19.6470592954167" />
-                  <mssgle:LineSegment
-                    End="72.9714294667147,23.7941185908334" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
